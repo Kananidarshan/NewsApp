@@ -1,0 +1,15 @@
+.truncate-two-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3.6em;
+    /* assuming the line height is 1.8em */
+    line-height: 1.8em;
+    /* adjust based on your actual line height */
+}
+
+.bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+}

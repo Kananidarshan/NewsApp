@@ -1,0 +1,17 @@
+/* global.css */
+body {
+    background-color: gray;
+    margin: 0;
+    /* Optional: Remove default margin */
+    padding: 0;
+    /* Optional: Remove default padding */
+    height: 100%;
+    /* Optional: Ensure body takes full height */
+    box-sizing: border-box;
+    /* Optional: Include padding and border in element's total width and height */
+}
+
+html {
+    height: 100%;
+    /* Ensure html element takes full height */
+}

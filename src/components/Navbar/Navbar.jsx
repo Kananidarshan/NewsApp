@@ -13,31 +13,31 @@ const Menu = [
   },
   {
     id: 2,
-    name: "Top News",
-    link: "/Allnews",
+    name: "Business",
+    link: "/Business",
   },
   {
     id: 3,
     name: "Sports",
-    link: "/news/sports",
+    link: "/SportNews",
   },
 ];
 
 const DropdownLinks = [
   {
     id: 1,
-    name: "Trending News",
-    link: "/#",
+    name: "Health",
+    link: "/Health",
   },
   {
     id: 2,
-    name: "Best sport",
-    link: "/#",
+    name: "Business",
+    link: "/Business",
   },
   {
     id: 3,
-    name: "Top Seen",
-    link: "/#",
+    name: "Sports",
+    link: "/SportNews",
   },
 ];
 
@@ -74,7 +74,7 @@ const Navbar = () => {
               placeholder="Search"
               className="h-[40px] pl-6 pr-2 border-gray-300 group-hover:w-[300px] transition-all 
                duration-300 rounded-full border 
-               border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:scale-105"
+               focus:outline-none focus:ring-2 focus:ring-blue-500 hover:scale-105"
             />
             <MdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-4 text-xl" />
           </div>
@@ -99,7 +99,7 @@ const Navbar = () => {
               return (
                 <li key={data.id}>
                   <Link
-                    className="inline-block text-white hover:text-yellow-500 px-4 duration-200"
+                    className="inline-block text-lg text-white hover:text-yellow-500 px-4 duration-200 hover:scale-105"
                     to={data.link}
                   >
                     {data.name}
@@ -110,7 +110,7 @@ const Navbar = () => {
             {/* simple dropdown menu */}
             <li className="group relative cursor-pointer">
               <Link
-                className="flex items-center gap-2 py-2 text-white font-medium hover:text-yellow-500"
+                className="flex items-center gap-2 py-2 text-white text-lg font-medium hover:text-yellow-500 hover:scale-105"
                 to="#"
               >
                 Trending News

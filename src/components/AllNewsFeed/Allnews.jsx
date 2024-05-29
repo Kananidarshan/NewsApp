@@ -1,11 +1,12 @@
 import React from "react";
-import Newscard from "../components/News/Newscard";
-import Footer from "../components/Footer/Footer";
+import Newscard from "../News/Newscard";
+import Footer from "../Footer/Footer";
 
 const Allnews = ({ articles }) => {
   return (
     <>
       <Newscard isHome={false} />
+      <Footer />
     </>
   );
 };

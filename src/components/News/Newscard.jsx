@@ -2,16 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../style.css";
 import { useNavigate } from "react-router-dom";
-const Newscard = ({ isHome = true }) => {
+
+const Newscard = ({ isHome = true, category = "general" }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
+      const BaseUrl = "https://newsapi.org/v2/top-headlines";
+      const ApiKey = "6944ef81cc0a46649c3628617b7c9808";
       const apiUrl = isHome
-        ? "http://newsapi.org/v2/top-headlines?country=in&pageSize=3&apiKey=6944ef81cc0a46649c3628617b7c9808"
-        : "http://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=6944ef81cc0a46649c3628617b7c9808";
+        ? `${BaseUrl}?country=in&category=${category}&pageSize=3&apiKey=${ApiKey}`
+        : `${BaseUrl}?country=in&category=${category}&pageSize=9&apiKey=${ApiKey}`;
+
       try {
         const response = await axios.get(apiUrl);
         setArticles(response.data.articles);
@@ -24,19 +29,28 @@ const Newscard = ({ isHome = true }) => {
     };
     fetchData();
   }, [isHome]);
+
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="bg-gray-700 text-white text-center py-5 text-xl font-extrabold">
+        Loading...
+      </div>
+    );
   }
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+
+  // for Title of news card
   function getFourWords(title) {
     const words = title.split(" ");
     return words.slice(0, 4).join(" ");
   }
+
   const handleButtonClick = () => {
     navigate("/Allnews");
   };
+
   return (
     <div className="container shadow-md">
       <div className="flex flex-col pb-5 mt-5">
@@ -107,4 +121,5 @@ const Newscard = ({ isHome = true }) => {
     </div>
   );
 };
+
 export default Newscard;

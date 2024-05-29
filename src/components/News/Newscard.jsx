@@ -2,47 +2,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../style.css";
 import { useNavigate } from "react-router-dom";
-
 const Newscard = ({ isHome = true }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
   useEffect(() => {
     const fetchData = async () => {
       const apiUrl = isHome
-        ? "https://newsapi.org/v2/top-headlines?country=in&pageSize=3&apiKey=6944ef81cc0a46649c3628617b7c9808"
-        : "https://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=6944ef81cc0a46649c3628617b7c9808";
+        ? "http://newsapi.org/v2/top-headlines?country=in&pageSize=3&apiKey=6944ef81cc0a46649c3628617b7c9808"
+        : "http://newsapi.org/v2/top-headlines?country=in&pageSize=9&apiKey=6944ef81cc0a46649c3628617b7c9808";
       try {
         const response = await axios.get(apiUrl);
         setArticles(response.data.articles);
         setLoading(false);
       } catch (error) {
+        console.error("Error fetching the data:", error);
         setError(error);
         setLoading(false);
       }
     };
     fetchData();
   }, [isHome]);
-
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
   function getFourWords(title) {
     const words = title.split(" ");
     return words.slice(0, 4).join(" ");
   }
-
   const handleButtonClick = () => {
     navigate("/Allnews");
   };
-
   return (
     <div className="container shadow-md">
       <div className="flex flex-col pb-5 mt-5">
@@ -93,7 +87,7 @@ const Newscard = ({ isHome = true }) => {
                     rel="noopener noreferrer"
                     className="block items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    Read more
+                    Read more{" "}
                     <span className="pl-2 text-lg font-bold">&rarr;</span>
                   </a>
                 </div>
@@ -113,5 +107,4 @@ const Newscard = ({ isHome = true }) => {
     </div>
   );
 };
-
 export default Newscard;

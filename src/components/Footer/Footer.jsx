@@ -101,7 +101,7 @@ const Footer = () => {
 
               {/* Social Link  */}
 
-              <div className="py-8 px-4">
+              <div className=" px-4 top-0">
                 <div className="flex items-center gap-3 mt-10 ">
                   <a href="#">
                     <FaInstagram className="text-3xl hover:text-yellow-600" />

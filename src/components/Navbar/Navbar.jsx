@@ -93,8 +93,8 @@ const Navbar = () => {
         data-aos="zoom-in"
         className="flex justify-center bg-gray-500 py-2 gap-3"
       >
-        <nav>
-          <ul className="flex items-center font-medium">
+        <nav className="">
+          <ul className="flex flex-col md:flex-row items-center font-medium gap-2">
             {Menu.map((data) => {
               return (
                 <li key={data.id}>

@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <>
       <div style={BannerImg} className="text-white">
-        <div className="container pb-16">
+        <div className="container pb-16 ">
           <div data-aos="zoom-in" className="grid md:grid-cols-3  pt-5">
             {/* company details  */}
             <div className="py-8 px-4">

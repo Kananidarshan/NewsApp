@@ -3,7 +3,11 @@ import axios from "axios";
 import "../../style.css";
 import { useNavigate } from "react-router-dom";
 
-const Newscard = ({ isHome = true, category = "general" }) => {
+const Newscard = ({
+  isHome = true,
+  category = "general",
+  Title = "GENRAL NEWS",
+}) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +15,7 @@ const Newscard = ({ isHome = true, category = "general" }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const BaseUrl = "https://newsapi.org/v2/top-headlines";
+      const BaseUrl = "http://newsapi.org/v2/top-headlines";
       const ApiKey = "6944ef81cc0a46649c3628617b7c9808";
       const apiUrl = isHome
         ? `${BaseUrl}?country=in&category=${category}&pageSize=3&apiKey=${ApiKey}`
@@ -58,7 +62,7 @@ const Newscard = ({ isHome = true, category = "general" }) => {
           data-aos="zoom-in"
           className="text-center text-black text-4xl font-bold mt-2 font-Reddit"
         >
-          NEWS
+          {Title}
         </h1>
         <div
           data-aos="fade-up"

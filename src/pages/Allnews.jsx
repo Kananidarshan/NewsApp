@@ -1,11 +1,10 @@
 import React from "react";
 import Newscard from "../components/News/Newscard";
-import Footer from "../components/Footer/Footer";
 
-const Allnews = ({ articles }) => {
+const Allnews = () => {
   return (
     <>
-      <Newscard isHome={false} />
+      <Newscard isHome={false} Title="ALL GENRAL NEWS" />
     </>
   );
 };

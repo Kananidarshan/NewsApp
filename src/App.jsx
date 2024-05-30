@@ -6,7 +6,7 @@ import AOS from "aos";
 import React, { useEffect } from "react";
 import MainLayout from "./layouts/MainLayout";
 import Homepage from "./pages/Homepage";
-import Allnews from "./components/AllNewsFeed/Allnews";
+import Allnews from "./pages/Allnews";
 import SportNews from "./pages/SportNews";
 import "./global.css"; // Import the global CSS file
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -33,7 +33,6 @@ function App() {
           <Route path="/SportNews" element={<SportNews />} />
           <Route path="/Business" element={<Business />} />
           <Route path="/Health" element={<HealthNews />} />
-
           {/* Add more routes as needed */}
         </Routes>
       </MainLayout>

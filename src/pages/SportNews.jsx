@@ -4,7 +4,7 @@ import Newscard from "../components/News/Newscard";
 const SportNews = () => {
   return (
     <div>
-      <Newscard isHome={false} category="sports" />
+      <Newscard isHome={false} category="sports" Title="SPORT NEWS" />
     </div>
   );
 };

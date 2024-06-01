@@ -19,7 +19,7 @@ const Newscard = ({
       const ApiKey = "6944ef81cc0a46649c3628617b7c9808";
       const apiUrl = isHome
         ? `${BaseUrl}?country=in&category=${category}&pageSize=3&apiKey=${ApiKey}`
-        : `${BaseUrl}?country=in&category=${category}&pageSize=9&apiKey=${ApiKey}`;
+        : `${BaseUrl}?country=in&category=${category}&pageSize=12&apiKey=${ApiKey}`;
 
       try {
         const response = await axios.get(apiUrl);

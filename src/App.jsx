@@ -12,6 +12,7 @@ import "./global.css"; // Import the global CSS file
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Business from "./pages/BusinessNews";
 import HealthNews from "./pages/HealthNews";
+import Entertainment from "./pages/Entertainment";
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/SportNews" element={<SportNews />} />
           <Route path="/Business" element={<Business />} />
           <Route path="/Health" element={<HealthNews />} />
+          <Route path="/entertainment" element={<Entertainment />} />
           {/* Add more routes as needed */}
         </Routes>
       </MainLayout>

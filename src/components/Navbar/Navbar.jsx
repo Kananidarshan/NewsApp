@@ -31,8 +31,8 @@ const DropdownLinks = [
   },
   {
     id: 2,
-    name: "Business",
-    link: "/Business",
+    name: "Entertainment",
+    link: "/entertainment",
   },
   {
     id: 3,
